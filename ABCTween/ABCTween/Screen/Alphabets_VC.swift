@@ -17,14 +17,28 @@ class Alphabets_VC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnAbcCapital(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AbcCapital_VC") as! AbcCapital_VC
+        present(vc, animated: true, completion: nil)
     }
-    */
+    
+    @IBAction func btnAbcSmall(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AbcSmall_VC") as! AbcSmall_VC
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnAbcWithPic(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ABCWithPicVC") as! ABCWithPicVC
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnAbcPuzzle(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AbcPuzzle_VC") as! AbcPuzzle_VC
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func closeBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }

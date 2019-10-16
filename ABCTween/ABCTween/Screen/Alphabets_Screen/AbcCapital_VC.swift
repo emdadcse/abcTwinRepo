@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ABCOnlyVC: UIViewController, AVAudioPlayerDelegate {
+class AbcCapital_VC: UIViewController, AVAudioPlayerDelegate {
     
     var audioPlayer : AVAudioPlayer!
     let soundArray = ["al_01", "al_02", "al_03", "al_02", "al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03"]
