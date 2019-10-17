@@ -13,7 +13,7 @@ class Color_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view. here is line
     }
     @IBAction func closeBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
