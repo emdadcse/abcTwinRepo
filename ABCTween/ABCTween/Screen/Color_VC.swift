@@ -18,5 +18,20 @@ class Color_VC: UIViewController {
     @IBAction func closeBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func btnColorPronounce(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ColorPronounce_VC") as! ColorPronounce_VC
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnColorWithPic(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ColorWithPic_VC") as! ColorWithPic_VC
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnColorPuzzle(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ColorPuzzle_VC") as! ColorPuzzle_VC
+        present(vc, animated: true, completion: nil)
+    }
 
 }

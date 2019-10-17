@@ -20,4 +20,18 @@ class Number_VC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func btnNumberOnly(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NumberOnly_VC") as! NumberOnly_VC
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnNumberWithPic(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NumberWithPic_VC") as! NumberWithPic_VC
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnNumberPuzzle(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NumberPuzzle_VC") as! NumberPuzzle_VC
+        present(vc, animated: true, completion: nil)
+    }
 }
