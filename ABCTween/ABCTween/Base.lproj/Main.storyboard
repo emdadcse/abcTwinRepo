@@ -568,61 +568,69 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QGW-Ay-9qr">
-                                <rect key="frame" x="30" y="137.5" width="607" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QGW-Ay-9qr" userLabel="Root Stack View">
+                                <rect key="frame" x="179.5" y="33.5" width="308" height="308"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajl-n6-Cye">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.60253400260000001" green="0.0098965226949999999" blue="0.024720791320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lnn-uC-u6p" userLabel="Top Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="308" height="150"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajl-n6-Cye">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="dKp-at-Beg"/>
+                                                    <constraint firstAttribute="height" constant="150" id="m7J-3f-R3N"/>
+                                                </constraints>
+                                                <state key="normal" title="ABC" image="cover-english">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnAbcCapital:" destination="G0n-qo-xeU" eventType="touchUpInside" id="TFC-Av-jqL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edJ-ff-ChB">
+                                                <rect key="frame" x="158" y="0.0" width="150" height="150"/>
+                                                <state key="normal" title="abc" image="cover-english">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnAbcSmall:" destination="G0n-qo-xeU" eventType="touchUpInside" id="zTO-id-fzb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Q7g-0J-8mg"/>
-                                            <constraint firstAttribute="height" constant="100" id="u2N-RS-NPG"/>
+                                            <constraint firstItem="edJ-ff-ChB" firstAttribute="width" secondItem="Ajl-n6-Cye" secondAttribute="width" id="6HN-m2-Enc"/>
+                                            <constraint firstItem="edJ-ff-ChB" firstAttribute="height" secondItem="Ajl-n6-Cye" secondAttribute="height" id="Zei-aM-84j"/>
                                         </constraints>
-                                        <state key="normal" title="ABC">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnAbcCapital:" destination="G0n-qo-xeU" eventType="touchUpInside" id="TFC-Av-jqL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edJ-ff-ChB">
-                                        <rect key="frame" x="169" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.60253400260000001" green="0.0098965226949999999" blue="0.024720791320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="abc">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnAbcSmall:" destination="G0n-qo-xeU" eventType="touchUpInside" id="zTO-id-fzb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLG-ZT-zEp">
-                                        <rect key="frame" x="338" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.60253400260000001" green="0.0098965226949999999" blue="0.024720791320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="pic">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnAbcWithPic:" destination="G0n-qo-xeU" eventType="touchUpInside" id="CoN-Z5-peM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRR-D4-z40">
-                                        <rect key="frame" x="507" y="0.0" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.60253400260000001" green="0.0098965226949999999" blue="0.024720791320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="cba">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnAbcPuzzle:" destination="G0n-qo-xeU" eventType="touchUpInside" id="Yrh-KZ-WGC"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="71A-Q3-9NF" userLabel="Bottom Stack View">
+                                        <rect key="frame" x="0.0" y="158" width="308" height="150"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLG-ZT-zEp">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                <state key="normal" title="pic" image="cover-english">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnAbcWithPic:" destination="G0n-qo-xeU" eventType="touchUpInside" id="CoN-Z5-peM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRR-D4-z40">
+                                                <rect key="frame" x="158" y="0.0" width="150" height="150"/>
+                                                <state key="normal" title="cba" image="cover-english">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnAbcPuzzle:" destination="G0n-qo-xeU" eventType="touchUpInside" id="Yrh-KZ-WGC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="PLG-ZT-zEp" firstAttribute="height" secondItem="Ajl-n6-Cye" secondAttribute="height" id="6Y6-NK-nzE"/>
-                                    <constraint firstItem="qRR-D4-z40" firstAttribute="height" secondItem="Ajl-n6-Cye" secondAttribute="height" id="DtP-cp-uXf"/>
-                                    <constraint firstItem="PLG-ZT-zEp" firstAttribute="width" secondItem="Ajl-n6-Cye" secondAttribute="width" id="Ptp-pS-qvL"/>
-                                    <constraint firstItem="edJ-ff-ChB" firstAttribute="width" secondItem="Ajl-n6-Cye" secondAttribute="width" id="fwd-9D-lvg"/>
-                                    <constraint firstItem="qRR-D4-z40" firstAttribute="width" secondItem="Ajl-n6-Cye" secondAttribute="width" id="tFl-c4-sGu"/>
-                                    <constraint firstItem="edJ-ff-ChB" firstAttribute="height" secondItem="Ajl-n6-Cye" secondAttribute="height" id="umw-w1-UQ8"/>
+                                    <constraint firstItem="qRR-D4-z40" firstAttribute="width" secondItem="Ajl-n6-Cye" secondAttribute="width" id="2JQ-Bb-Aj4"/>
+                                    <constraint firstItem="qRR-D4-z40" firstAttribute="height" secondItem="Ajl-n6-Cye" secondAttribute="height" id="E4v-0S-dlS"/>
+                                    <constraint firstItem="PLG-ZT-zEp" firstAttribute="height" secondItem="Ajl-n6-Cye" secondAttribute="height" id="Go7-1v-0hJ"/>
+                                    <constraint firstItem="PLG-ZT-zEp" firstAttribute="width" secondItem="Ajl-n6-Cye" secondAttribute="width" id="Q2d-So-40r"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHc-0O-Mc7">
@@ -642,12 +650,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="centerX" secondItem="fJg-tW-BIW" secondAttribute="centerX" id="Rf1-ak-NCc"/>
                             <constraint firstItem="PHc-0O-Mc7" firstAttribute="leading" secondItem="4Ve-ZA-2ui" secondAttribute="leading" constant="20" id="Y5t-oa-Hbd"/>
-                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="centerY" secondItem="fJg-tW-BIW" secondAttribute="centerY" id="b4e-SJ-yfM"/>
-                            <constraint firstItem="4Ve-ZA-2ui" firstAttribute="trailing" secondItem="QGW-Ay-9qr" secondAttribute="trailing" constant="30" id="baE-4T-6yG"/>
+                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="centerY" secondItem="fJg-tW-BIW" secondAttribute="centerY" id="mEV-NR-1T2"/>
                             <constraint firstItem="PHc-0O-Mc7" firstAttribute="top" secondItem="4Ve-ZA-2ui" secondAttribute="top" constant="20" id="pcB-jb-Nth"/>
-                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="leading" secondItem="4Ve-ZA-2ui" secondAttribute="leading" constant="30" id="z8z-oK-WKb"/>
+                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="centerX" secondItem="fJg-tW-BIW" secondAttribute="centerX" id="plJ-fn-Tbg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Ve-ZA-2ui"/>
                     </view>
@@ -1292,6 +1298,7 @@
         <image name="btn_abc_with_pic" width="413" height="463"/>
         <image name="button_line" width="793.5" height="118"/>
         <image name="close-button" width="70" height="70"/>
+        <image name="cover-english" width="300" height="299"/>
         <image name="demo_background_sky.jpg" width="624" height="440.6400146484375"/>
         <image name="main_logo.png" width="924" height="381"/>
         <image name="single-alph-a" width="142.5" height="175.5"/>
