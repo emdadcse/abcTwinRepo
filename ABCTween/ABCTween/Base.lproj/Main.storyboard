@@ -102,52 +102,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFO-qj-HFG">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFO-qj-HFG">
                                 <rect key="frame" x="617" y="20" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RPE-eU-GkM"/>
+                                    <constraint firstAttribute="width" constant="30" id="mBA-NM-A8B"/>
+                                </constraints>
                                 <state key="normal" image="close-button"/>
                                 <connections>
                                     <action selector="closeBtn:" destination="17c-DH-wO2" eventType="touchUpInside" id="JTa-kp-0FS"/>
                                     <action selector="closeBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hed-0L-6Rg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRe-YO-6bE">
-                                <rect key="frame" x="216" y="308" width="79" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="awp-btn-backward"/>
-                                <connections>
-                                    <action selector="backBtnPressed:" destination="17c-DH-wO2" eventType="touchUpInside" id="EFd-D8-Xvy"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="single-alph-a" translatesAutoresizingMaskIntoConstraints="NO" id="m4e-br-gma">
-                                <rect key="frame" x="0.0" y="0.0" width="248" height="293"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAO-8l-JUd">
-                                <rect key="frame" x="332" y="308" width="71" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="awp-btn-forward"/>
-                                <connections>
-                                    <action selector="forwardBtnPressed:" destination="17c-DH-wO2" eventType="touchUpInside" id="wBf-DR-9sY"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="single-word-a" translatesAutoresizingMaskIntoConstraints="NO" id="p0N-jm-8vM">
-                                <rect key="frame" x="254" y="44" width="393" height="239"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="St4-pX-zzr">
+                                <rect key="frame" x="249.5" y="300" width="168" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRe-YO-6bE">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="12b-PN-YeO"/>
+                                            <constraint firstAttribute="height" constant="70" id="AOM-4Y-Jwu"/>
+                                        </constraints>
+                                        <state key="normal" image="awp-btn-backward"/>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="17c-DH-wO2" eventType="touchUpInside" id="EFd-D8-Xvy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAO-8l-JUd">
+                                        <rect key="frame" x="88" y="0.0" width="80" height="70"/>
+                                        <state key="normal" image="awp-btn-forward"/>
+                                        <connections>
+                                            <action selector="forwardBtnPressed:" destination="17c-DH-wO2" eventType="touchUpInside" id="wBf-DR-9sY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bAO-8l-JUd" firstAttribute="height" secondItem="uRe-YO-6bE" secondAttribute="height" id="Flq-Nq-Ah2"/>
+                                    <constraint firstItem="bAO-8l-JUd" firstAttribute="width" secondItem="uRe-YO-6bE" secondAttribute="width" id="QH7-P4-Mc8"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="128" translatesAutoresizingMaskIntoConstraints="NO" id="j9L-d5-7U2">
+                                <rect key="frame" x="72.5" y="50" width="522" height="275.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="single-alph-a" translatesAutoresizingMaskIntoConstraints="NO" id="m4e-br-gma">
+                                        <rect key="frame" x="0.0" y="0.0" width="142.5" height="275.5"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="single-word-a" translatesAutoresizingMaskIntoConstraints="NO" id="p0N-jm-8vM">
+                                        <rect key="frame" x="270.5" y="0.0" width="251.50000000000006" height="275.5"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.97647058819999999" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j9L-d5-7U2" firstAttribute="centerX" secondItem="IhS-Ir-h7S" secondAttribute="centerX" id="FQN-DJ-tko"/>
+                            <constraint firstItem="kFO-qj-HFG" firstAttribute="top" secondItem="ud0-Ow-e7Q" secondAttribute="top" constant="20" id="KFB-3S-FTM"/>
+                            <constraint firstItem="St4-pX-zzr" firstAttribute="centerX" secondItem="IhS-Ir-h7S" secondAttribute="centerX" id="nG1-fi-pFR"/>
+                            <constraint firstItem="j9L-d5-7U2" firstAttribute="centerY" secondItem="IhS-Ir-h7S" secondAttribute="centerY" id="qzD-5b-bnT"/>
+                            <constraint firstItem="ud0-Ow-e7Q" firstAttribute="trailing" secondItem="kFO-qj-HFG" secondAttribute="trailing" constant="20" id="w6C-Jk-9Fx"/>
+                            <constraint firstItem="ud0-Ow-e7Q" firstAttribute="bottom" secondItem="St4-pX-zzr" secondAttribute="bottom" constant="5" id="xa8-E9-JFm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ud0-Ow-e7Q"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="m4e-br-gma"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=regular">
-                            <mask key="subviews">
-                                <include reference="m4e-br-gma"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="alphabetPicture_imageView" destination="p0N-jm-8vM" id="rpb-Jb-N26"/>
@@ -156,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDR-Gl-1OC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460" y="62"/>
+            <point key="canvasLocation" x="1459.52023988006" y="61.600000000000001"/>
         </scene>
         <!--Number PuzzleVC-->
         <scene sceneID="qcd-aG-24b">
@@ -246,14 +261,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="567" height="63"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coX-C2-tEv">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_a"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WjV-B8-2q6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXl-oR-gA5">
-                                                <rect key="frame" x="82" y="0.0" width="74.5" height="60"/>
+                                                <rect key="frame" x="82" y="0.0" width="74.5" height="63"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                                 <state key="normal" title="A" image="alphabet_b">
                                                     <color key="titleColor" red="0.14484580321339335" green="0.16064383252303949" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -263,35 +278,35 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9v-Jh-W1O">
-                                                <rect key="frame" x="164.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="164.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_c"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O46-k2-L4n"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-F0-Fsg">
-                                                <rect key="frame" x="246.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="246.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_d"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7j1-cN-bIL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMn-0w-chu">
-                                                <rect key="frame" x="328.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="328.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_e"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uvd-L5-GYb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1h7-nF-Rba">
-                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="63"/>
                                                 <state key="normal" image="alphabet_f"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8b-2B-7AA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clp-PI-mKF">
-                                                <rect key="frame" x="493" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="493" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_g"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AnC-m5-nHH"/>
@@ -303,49 +318,49 @@
                                         <rect key="frame" x="0.0" y="71" width="567" height="62.5"/>
                                         <subviews>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlM-7Y-mOl">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_h"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oIY-cZ-Td3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o0-Oh-2gk">
-                                                <rect key="frame" x="82" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="82" y="0.0" width="74.5" height="62.5"/>
                                                 <state key="normal" image="alphabet_i"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wyd-wN-oHv"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifT-JG-Cya">
-                                                <rect key="frame" x="164.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="164.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_j"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OZz-0h-gMe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhR-s8-f36">
-                                                <rect key="frame" x="246.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="246.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_k"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c0P-M3-qkW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwH-m6-ZF6">
-                                                <rect key="frame" x="328.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="328.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_l"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MYg-24-CTn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yts-0m-JJK">
-                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="62.5"/>
                                                 <state key="normal" image="alphabet_m"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fze-42-yS4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-JW-uw7">
-                                                <rect key="frame" x="493" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="493" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_n"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EzL-3T-Xay"/>
@@ -357,49 +372,49 @@
                                         <rect key="frame" x="0.0" y="141.5" width="567" height="63"/>
                                         <subviews>
                                             <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcL-EQ-Rgp">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_o"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wpo-da-YRN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6As-Fr-8am">
-                                                <rect key="frame" x="82" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="82" y="0.0" width="74.5" height="63"/>
                                                 <state key="normal" image="alphabet_p"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zxf-2f-wdm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6Y-dx-90p">
-                                                <rect key="frame" x="164.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="164.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_q"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ctc-3N-LoM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zze-fu-47g">
-                                                <rect key="frame" x="246.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="246.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_r"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkt-zX-YBU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERu-hK-yPg">
-                                                <rect key="frame" x="328.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="328.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_s"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vN8-zv-oGC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuL-Uw-6SA">
-                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="63"/>
                                                 <state key="normal" image="alphabet_o"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a9b-gL-LwD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ih4-qZ-S0q">
-                                                <rect key="frame" x="493" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="493" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_u"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lcj-DB-D2m"/>
@@ -411,35 +426,35 @@
                                         <rect key="frame" x="0.0" y="212.5" width="567" height="62.5"/>
                                         <subviews>
                                             <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gE-8l-luv">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_v"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ctb-kw-0un"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EF5-uX-mA7">
-                                                <rect key="frame" x="82" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="82" y="0.0" width="74.5" height="62.5"/>
                                                 <state key="normal" image="alphabet_w"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ZN-MT-Efc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1K-fs-5MR">
-                                                <rect key="frame" x="164.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="164.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_x"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ny-0H-u57"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHb-Gk-zEQ">
-                                                <rect key="frame" x="246.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="246.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_y"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EJA-jM-i1n"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-Nd-URq">
-                                                <rect key="frame" x="328.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="328.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_z"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="McT-hN-KJZ"/>
@@ -561,77 +576,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alphabet Learning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="198-fA-2DW">
-                                <rect key="frame" x="267" y="33" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QGW-Ay-9qr" userLabel="Root Stack View">
-                                <rect key="frame" x="179.5" y="33.5" width="308" height="308"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-alphabet-main" translatesAutoresizingMaskIntoConstraints="NO" id="sCB-pU-vw5" userLabel="background ">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QGW-Ay-9qr" userLabel="Root Stack View">
+                                <rect key="frame" x="66.5" y="112.5" width="534" height="150"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lnn-uC-u6p" userLabel="Top Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="308" height="150"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajl-n6-Cye">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="dKp-at-Beg"/>
-                                                    <constraint firstAttribute="height" constant="150" id="m7J-3f-R3N"/>
-                                                </constraints>
-                                                <state key="normal" title="ABC" image="cover-english">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="btnAbcCapital:" destination="G0n-qo-xeU" eventType="touchUpInside" id="TFC-Av-jqL"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edJ-ff-ChB">
-                                                <rect key="frame" x="158" y="0.0" width="150" height="150"/>
-                                                <state key="normal" title="abc" image="cover-english">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="btnAbcSmall:" destination="G0n-qo-xeU" eventType="touchUpInside" id="zTO-id-fzb"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="edJ-ff-ChB" firstAttribute="width" secondItem="Ajl-n6-Cye" secondAttribute="width" id="6HN-m2-Enc"/>
-                                            <constraint firstItem="edJ-ff-ChB" firstAttribute="height" secondItem="Ajl-n6-Cye" secondAttribute="height" id="Zei-aM-84j"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="71A-Q3-9NF" userLabel="Bottom Stack View">
-                                        <rect key="frame" x="0.0" y="158" width="308" height="150"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLG-ZT-zEp">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                                <state key="normal" title="pic" image="cover-english">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="btnAbcWithPic:" destination="G0n-qo-xeU" eventType="touchUpInside" id="CoN-Z5-peM"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRR-D4-z40">
-                                                <rect key="frame" x="158" y="0.0" width="150" height="150"/>
-                                                <state key="normal" title="cba" image="cover-english">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="btnAbcPuzzle:" destination="G0n-qo-xeU" eventType="touchUpInside" id="Yrh-KZ-WGC"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRR-D4-z40">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="150"/>
+                                        <state key="normal" title="cba" image="alp-btn-abc-small">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnAbcPuzzle:" destination="G0n-qo-xeU" eventType="touchUpInside" id="Yrh-KZ-WGC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLG-ZT-zEp">
+                                        <rect key="frame" x="135.5" y="0.0" width="127.5" height="150"/>
+                                        <state key="normal" image="alp-btn-abc-capital">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnAbcWithPic:" destination="G0n-qo-xeU" eventType="touchUpInside" id="CoN-Z5-peM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajl-n6-Cye">
+                                        <rect key="frame" x="271" y="0.0" width="127.5" height="150"/>
+                                        <state key="normal" title="ABC" image="alp-btn-abc-pic">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnAbcCapital:" destination="G0n-qo-xeU" eventType="touchUpInside" id="TFC-Av-jqL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edJ-ff-ChB">
+                                        <rect key="frame" x="406.5" y="0.0" width="127.5" height="150"/>
+                                        <state key="normal" title="abc" image="alp-btn-abc-puzzle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnAbcSmall:" destination="G0n-qo-xeU" eventType="touchUpInside" id="zTO-id-fzb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="qRR-D4-z40" firstAttribute="width" secondItem="Ajl-n6-Cye" secondAttribute="width" id="2JQ-Bb-Aj4"/>
-                                    <constraint firstItem="qRR-D4-z40" firstAttribute="height" secondItem="Ajl-n6-Cye" secondAttribute="height" id="E4v-0S-dlS"/>
-                                    <constraint firstItem="PLG-ZT-zEp" firstAttribute="height" secondItem="Ajl-n6-Cye" secondAttribute="height" id="Go7-1v-0hJ"/>
-                                    <constraint firstItem="PLG-ZT-zEp" firstAttribute="width" secondItem="Ajl-n6-Cye" secondAttribute="width" id="Q2d-So-40r"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHc-0O-Mc7">
                                 <rect key="frame" x="20" y="20" width="30" height="30"/>
@@ -647,20 +634,35 @@
                                     <action selector="closeBtn:" destination="ejJ-mo-MZF" eventType="touchUpInside" id="K2c-Tv-P6g"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alphabet-main-title" translatesAutoresizingMaskIntoConstraints="NO" id="Z8a-y4-vDy">
+                                <rect key="frame" x="215.5" y="20" width="236.00000000000023" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="hA4-4V-Cjk"/>
+                                    <constraint firstAttribute="width" constant="236" id="uQE-q4-j15"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="centerX" secondItem="fJg-tW-BIW" secondAttribute="centerX" id="Drv-zb-hhT"/>
+                            <constraint firstItem="sCB-pU-vw5" firstAttribute="top" secondItem="fJg-tW-BIW" secondAttribute="top" id="Gh8-59-w3Q"/>
+                            <constraint firstAttribute="bottom" secondItem="sCB-pU-vw5" secondAttribute="bottom" id="IIm-ad-fal"/>
+                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="width" secondItem="4Ve-ZA-2ui" secondAttribute="width" multiplier="8:10" id="Jwg-l5-N5l"/>
+                            <constraint firstItem="Z8a-y4-vDy" firstAttribute="top" secondItem="4Ve-ZA-2ui" secondAttribute="top" constant="20" id="RzX-6b-6GN"/>
+                            <constraint firstItem="sCB-pU-vw5" firstAttribute="trailing" secondItem="fJg-tW-BIW" secondAttribute="trailing" id="WF1-i8-B31"/>
                             <constraint firstItem="PHc-0O-Mc7" firstAttribute="leading" secondItem="4Ve-ZA-2ui" secondAttribute="leading" constant="20" id="Y5t-oa-Hbd"/>
-                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="centerY" secondItem="fJg-tW-BIW" secondAttribute="centerY" id="mEV-NR-1T2"/>
+                            <constraint firstItem="sCB-pU-vw5" firstAttribute="leading" secondItem="fJg-tW-BIW" secondAttribute="leading" id="iGy-pQ-gdo"/>
+                            <constraint firstItem="Z8a-y4-vDy" firstAttribute="centerX" secondItem="fJg-tW-BIW" secondAttribute="centerX" id="oXw-Sg-Y6L"/>
                             <constraint firstItem="PHc-0O-Mc7" firstAttribute="top" secondItem="4Ve-ZA-2ui" secondAttribute="top" constant="20" id="pcB-jb-Nth"/>
-                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="centerX" secondItem="fJg-tW-BIW" secondAttribute="centerX" id="plJ-fn-Tbg"/>
+                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="centerY" secondItem="fJg-tW-BIW" secondAttribute="centerY" id="pxv-Az-hui"/>
+                            <constraint firstItem="QGW-Ay-9qr" firstAttribute="height" secondItem="4Ve-ZA-2ui" secondAttribute="height" multiplier="2:5" id="rBV-LU-Coq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Ve-ZA-2ui"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZO-S3-aEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-609" y="63"/>
+            <point key="canvasLocation" x="-609.44527736131943" y="61.600000000000001"/>
         </scene>
         <!--NumberVC-->
         <scene sceneID="NJh-Dl-2zG">
@@ -858,14 +860,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="567" height="63"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPM-nV-Rmm">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_a"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="Mt1-Jw-RRd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd3-jt-owd">
-                                                <rect key="frame" x="82" y="0.0" width="74.5" height="60"/>
+                                                <rect key="frame" x="82" y="0.0" width="74.5" height="63"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                                 <state key="normal" title="A" image="alphabet_b">
                                                     <color key="titleColor" red="0.14484580320000001" green="0.1606438325" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -875,35 +877,35 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r01-A3-XAt">
-                                                <rect key="frame" x="164.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="164.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_c"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="F7b-YT-tob"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEt-88-ZsI">
-                                                <rect key="frame" x="246.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="246.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_d"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="OR5-ii-IWU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbH-ae-F10">
-                                                <rect key="frame" x="328.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="328.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_e"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="CvP-5R-9tD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpF-8j-7XQ">
-                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="63"/>
                                                 <state key="normal" image="alphabet_f"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="7WN-h5-DJv"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19a-yK-Qen">
-                                                <rect key="frame" x="493" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="493" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_g"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="wJ1-nJ-Dfo"/>
@@ -915,49 +917,49 @@
                                         <rect key="frame" x="0.0" y="71" width="567" height="62.5"/>
                                         <subviews>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ch-uv-dnM">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_h"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="Igh-uj-luo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDt-bv-lAx">
-                                                <rect key="frame" x="82" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="82" y="0.0" width="74.5" height="62.5"/>
                                                 <state key="normal" image="alphabet_i"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="WU0-rx-Vbt"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qw-lc-4kI">
-                                                <rect key="frame" x="164.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="164.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_j"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="kBD-gm-9O4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQA-2b-kgv">
-                                                <rect key="frame" x="246.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="246.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_k"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="I5f-bi-q9U"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snf-Js-SeT">
-                                                <rect key="frame" x="328.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="328.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_l"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="zwa-aZ-QSb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTb-zM-D86">
-                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="62.5"/>
                                                 <state key="normal" image="alphabet_m"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="grI-BI-NVO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz7-1p-Oos">
-                                                <rect key="frame" x="493" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="493" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_n"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="AAz-Q8-ZRx"/>
@@ -969,49 +971,49 @@
                                         <rect key="frame" x="0.0" y="141.5" width="567" height="63"/>
                                         <subviews>
                                             <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqi-4K-XSp">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_o"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="vkw-Hd-3xp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMA-sm-NSy">
-                                                <rect key="frame" x="82" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="82" y="0.0" width="74.5" height="63"/>
                                                 <state key="normal" image="alphabet_p"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="lig-tO-xkx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDt-n2-LxU">
-                                                <rect key="frame" x="164.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="164.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_q"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="eZB-xF-Jlp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQW-ge-X2A">
-                                                <rect key="frame" x="246.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="246.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_r"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="I4l-dE-eHA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkS-lW-9X6">
-                                                <rect key="frame" x="328.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="328.5" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_s"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="tmJ-6m-ano"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQm-aC-Bq4">
-                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="410.5" y="0.0" width="74.5" height="63"/>
                                                 <state key="normal" image="alphabet_o"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="5YI-QM-gXx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gU1-wq-yUU">
-                                                <rect key="frame" x="493" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="493" y="0.0" width="74" height="63"/>
                                                 <state key="normal" image="alphabet_u"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="XoM-Ut-5iF"/>
@@ -1023,35 +1025,35 @@
                                         <rect key="frame" x="0.0" y="212.5" width="567" height="62.5"/>
                                         <subviews>
                                             <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuM-RU-Wtz">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_v"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="7jM-qD-Lo9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APY-Ve-Smr">
-                                                <rect key="frame" x="82" y="0.0" width="74.5" height="22"/>
+                                                <rect key="frame" x="82" y="0.0" width="74.5" height="62.5"/>
                                                 <state key="normal" image="alphabet_w"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="AdR-7O-0VQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gud-tI-VMA">
-                                                <rect key="frame" x="164.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="164.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_x"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="isl-mn-pjM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPh-e5-3YO">
-                                                <rect key="frame" x="246.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="246.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_y"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="0aB-V1-Y8y"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoN-UW-RoL">
-                                                <rect key="frame" x="328.5" y="0.0" width="74" height="22"/>
+                                                <rect key="frame" x="328.5" y="0.0" width="74" height="62.5"/>
                                                 <state key="normal" image="alphabet_z"/>
                                                 <connections>
                                                     <action selector="alphabetBtn:" destination="EeV-sS-p0v" eventType="touchUpInside" id="GYr-7N-9Fq"/>
@@ -1267,6 +1269,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="alp-btn-abc-capital" width="400" height="399"/>
+        <image name="alp-btn-abc-pic" width="400" height="399"/>
+        <image name="alp-btn-abc-puzzle" width="400" height="399"/>
+        <image name="alp-btn-abc-small" width="400" height="399"/>
+        <image name="alphabet-main-title" width="813.5" height="101"/>
         <image name="alphabet_a" width="107" height="107"/>
         <image name="alphabet_b" width="107" height="107"/>
         <image name="alphabet_c" width="107" height="107"/>
@@ -1294,11 +1301,11 @@
         <image name="alphabet_z" width="107" height="107"/>
         <image name="awp-btn-backward" width="140" height="102"/>
         <image name="awp-btn-forward" width="136" height="98"/>
+        <image name="bg-alphabet-main" width="2208" height="1242"/>
         <image name="btn_abc_only" width="413" height="463"/>
         <image name="btn_abc_with_pic" width="413" height="463"/>
         <image name="button_line" width="793.5" height="118"/>
         <image name="close-button" width="70" height="70"/>
-        <image name="cover-english" width="300" height="299"/>
         <image name="demo_background_sky.jpg" width="624" height="440.6400146484375"/>
         <image name="main_logo.png" width="924" height="381"/>
         <image name="single-alph-a" width="142.5" height="175.5"/>
