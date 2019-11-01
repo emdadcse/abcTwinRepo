@@ -22,8 +22,19 @@ class AbcCapital_VC: UIViewController, AVAudioPlayerDelegate {
     }
  
     @IBAction func alphabetBtn(_ sender: UIButton) {
+        
         selectedSoundFileName = soundArray[sender.tag - 1]
         playSound()
+        
+        UIView.animate(withDuration: 1) {
+            let rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+            rotation.toValue = NSNumber(value: Double.pi * 2)
+            rotation.duration = 0.3
+            rotation.isCumulative = true
+            rotation.repeatCount = 2
+            //rotation.repeatCount = Float.greatestFiniteMagnitude
+            sender.layer.add(rotation, forKey: "rotationAnimation")
+        }
     }
     
     override func didReceiveMemoryWarning() {

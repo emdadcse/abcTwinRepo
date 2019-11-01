@@ -11,6 +11,9 @@ import AVFoundation
 
 class AbcSmall_VC: UIViewController, AVAudioPlayerDelegate {
     
+    
+    @IBOutlet var alp_a: CustomButton!
+    
     var audioPlayer : AVAudioPlayer!
     let soundArray = ["al_01", "al_02", "al_03", "al_02", "al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03","al_03"]
     var selectedSoundFileName = ""
@@ -24,6 +27,27 @@ class AbcSmall_VC: UIViewController, AVAudioPlayerDelegate {
     @IBAction func alphabetBtn(_ sender: UIButton) {
         selectedSoundFileName = soundArray[sender.tag - 1]
         playSound()
+        
+        //sender.alpha = 0
+       /* sender.transform = CGAffineTransform(rotationAngle: 180)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            //sender.alpha = 1
+            sender.transform = CGAffineTransform(rotationAngle: 0)
+            
+        })
+ */
+        
+        UIView.animate(withDuration: 1) {
+            let rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+            rotation.toValue = NSNumber(value: Double.pi * 2)
+            rotation.duration = 0.3
+            rotation.isCumulative = true
+            rotation.repeatCount = 3
+            //rotation.repeatCount = Float.greatestFiniteMagnitude
+            sender.layer.add(rotation, forKey: "rotationAnimation")
+        }
     }
     
     override func didReceiveMemoryWarning() {
